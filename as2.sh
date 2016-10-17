@@ -22,7 +22,7 @@ function assign_locpriv()
   [ elif [[ $1==10* || $1==192.168* ]] #if string starts with 10 or 192.168
   then
    out=$1$priv
-   echo $out; ]*#print with " Private IP" attached
+   echo $out; ]#print with " Private IP" attached
   fi
 }
 
