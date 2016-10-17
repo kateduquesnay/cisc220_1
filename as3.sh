@@ -54,3 +54,6 @@ do
   #echo player 2 wins!
 #else if (car3pos=40)
   #echo player 3 wins!
+
+
+#REALIZE THAT CASE INPUT WOULD HAVE WORKED BETTER :'(
