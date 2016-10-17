@@ -15,13 +15,13 @@ priv=" Private IP"
 function assign_locpriv()
 {
   if [[ $1==127* ]] 
-  then
-  1="$1 Local IP"
-  echo $1 #print with " Local IP" attached
+    then
+     1=$1 cat $loc
+     echo $1 #print with " Local IP" attached
   elif [[ $1==10* || $1==192.168* ]] 
-  then
-  1="$1 Private IP"
-  echo $1 #print with " Private IP" attached
+    then
+     1=$1 cat $priv
+     echo $1 #print with " Private IP" attached
   fi
 }
 
