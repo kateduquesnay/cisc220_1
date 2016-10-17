@@ -6,6 +6,8 @@
 # git clone https://github.com/kateduquesnay/cisc220_1.git cisc220_1\
 #Question 1\
 
+#!/bin/bash
+
 #Steps:
 #Ask for number --> Ask for operator --> Ask for number --> Produce result --Ask  for number 
 
@@ -16,8 +18,24 @@ varNum = read -p "Please insert a number"
 while varNum =! q || varOp 
 do 
   #Check to see if the variable is a number\
-  if ["$var" -eq "$Var"]
-  #Ask for an operator
-  varOp = read -p "Please insert operator"
+  if ["$varNum" -eq "$varNum"]
+  then
+    #Ask for an operator
+    varOp = read -p "Please insert operator"
+    #Execute loop for valid operators
+    while varOp == + || varOp == - || varOp == - || varOp == /
+    do
+    if [varOp == +]
+      
+      
+  else
+  echo Error! Please insert a number
+  continue 
+ 
+ 
+ 
+ done
+  
+  
     
     
