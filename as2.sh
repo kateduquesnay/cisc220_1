@@ -8,12 +8,12 @@
 
 #Question 2\
 #Get ip address\
-loc=" Local IP";
-priv=" Private IP";
+loc=" Local IP"
+priv=" Private IP"
 
-addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}');
+addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}')
 
-while read line; do assign_locpriv $line; done <<< "$addresses";
+while read line; do assign_locpriv $line; done <<< "$addresses"
 
 function assign_locpriv()
 {
@@ -21,7 +21,7 @@ function assign_locpriv()
 	if [[ $1==127* ]]; then
 	echo $ip$local;
 
-	[elif [[ $1==10* || $1==192.168* ]]; then
+	[ elif [[ $1==10* || $1==192.168* ]]; then
 	echo $ip$priv;]
 
 	fi
