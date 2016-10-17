@@ -22,6 +22,6 @@ function assign_locpriv()
   echo $ip$local
   [ elif [[ $1==10* || $1==192.168* ]] 
   then
-  echo $ip$priv;]*
+  echo $ip$priv]*
   fi
 }
