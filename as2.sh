@@ -15,15 +15,15 @@ priv=" Private IP"
 function assign_locpriv()
 {
   if [[ $1==127* ]] #if string starts with 127
-    then
-     out=$1$loc
-     echo $out #print with " Local IP" attached
+  then
+    out=$1$loc
+    echo $out #print with " Local IP" attached
   fi
   
   if [[ $1==10* || $1==192.168* ]] #if string starts with 10 or 192.168
-    then
-     out=$1$priv
-     echo $out #print with " Private IP" attached
+   then
+    out=$1$priv
+    echo $out #print with " Private IP" attached
   fi
 }
 
@@ -31,4 +31,4 @@ function assign_locpriv()
 addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}')
 
 #iterate through addresses variable and run assign_locpriv on each line
-while read line; do assign_locpriv $line; done <<< "$addresses"
+while read line; do echo $line; assign_locpriv $line; done <<< "$addresses"
