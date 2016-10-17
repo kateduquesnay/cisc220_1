@@ -28,4 +28,4 @@ function assign_locpriv()
 addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}')
 
 #iterate through addresses variable and run assign_locpriv on each line
-while read line; do echo $line; assign_locpriv $line; done <<< "$addresses"
+while read line; do assign_locpriv $line; done <<< "$addresses"
