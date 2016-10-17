@@ -16,10 +16,12 @@ function assign_locpriv()
 {
   if [[ $1==127* ]] 
   then
-  echo $ip$local #print with " Local IP" attached
+  1 = "$ Local IP"
+  echo $1 #print with " Local IP" attached
   elif [[ $1==10* || $1==192.168* ]] 
   then
-  echo $ip$priv #print with " Private IP" attached
+  1 = "$ Private IP"
+  echo $1 #print with " Private IP" attached
   fi
 }
 
