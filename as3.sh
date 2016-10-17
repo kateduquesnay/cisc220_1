@@ -38,13 +38,11 @@ do
     
   elif [$(inputNum) == 2]
     then
-      add "~" to beginning of car2
-      car2pos++
+      echo ${car2pos/"~"/$car2pos + "~"}
     
   elif [$(inputNum) == 3]
     then
-      add "~" to behinning of car3
-      car3pos++
+       echo ${car3pos/"~"/$car3pos + "~"}
  else 
   #clear screen
     
