@@ -11,12 +11,6 @@
 loc=" Local IP"
 priv=" Private IP"
 
-#Get the IP addresses on separate lines
-addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}')
-
-#iterate through addresses variable and run assign_locpriv on each line
-while read line; do assign_locpriv $line; done <<< "$addresses"
-
 #assigns local/private to the IP address if needed, then prints it
 function assign_locpriv()
 {
@@ -28,3 +22,9 @@ function assign_locpriv()
   echo $ip$priv #print with " Private IP" attached
   fi
 }
+
+#Get the IP addresses on separate lines
+addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}')
+
+#iterate through addresses variable and run assign_locpriv on each line
+while read line; do assign_locpriv $line; done <<< "$addresses"
