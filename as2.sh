@@ -18,10 +18,10 @@ while read line; do assign_locpriv $line; done <<< "$addresses"
 function assign_locpriv()
 {
 
-	if [[ $1==127* ]]; then
+	if [[ $1==127* ]] ; then
 	echo $ip$local;
 
-	[ elif [[ $1==10* || $1==192.168* ]]; then
+	[ elif [[ $1==10* || $1==192.168* ]] ; then
 	echo $ip$priv;]*
 
 	fi
