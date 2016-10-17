@@ -9,36 +9,43 @@
 
 #!/bin/bash
 
+#overveiw: 
 #print beginning shit
 #while:
 #print current race positions, (~ before, spaces after)
 #check if car reached 40 picks
 #if yes, print player wins, break
 #single character input from keyboard
-#if input is 1/2/3/ car 1/2/3 moves on step 
-#clear command
+#if input is 1/2/3/ car 1/2/3 moves one space forward 
+
+#create variable to hold the user's input:
+echo Welcome to the RACE
+inputNum = read -p "Input racing number"
+
+#Create strings for each car, cat the squiggles
+car1pos = "|->"
+car2pos = "|->"
+car3pos = "|->"
 
 
-#variables needed: 
-  #car 1, car 1's position
-  #car 2, car 2's position
-  #car 3, car 3's position
-  #input?
-  
-#while (car1pos != 40 && car2pos != 40 && car3pos != 40):
 
-  #if (number 1 is entered); then
-    #add "~" to beginning of car1
-    #car1pos++
+while car1pos != 40 && car2pos != 40 && car3pos != 40
+do
+
+  if [$(inputNum) == 1]
+    then
+    echo ${car1pos/"~"/$car1pos + "~"}
     
-  #if (number 2 is entered)
-    #add "~" to beginning of car2
-    #car2pos++
+  elif [$(inputNum) == 2]
+    then
+      add "~" to beginning of car2
+      car2pos++
     
-  #if (number 3 is entered)
-    #add "~" to behinning of car3
-    #car3pos++
-  
+  elif [$(inputNum) == 3]
+    then
+      add "~" to behinning of car3
+      car3pos++
+ else 
   #clear screen
     
 #if (car1pos=40)
