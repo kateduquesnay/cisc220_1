@@ -12,22 +12,33 @@ permissionSaver.sh
 #collect permissions for every file
 Perm= ls -l | xargs --printf "$(pwd)/%n %U %G %A \n"
 #save permissions in a text file
-echo $("Perm") >outputFile(n)
+echo $("Perm") >outputFile
 
 permissionRestter.sh
 #check if any permissions have changed
 newPer= ls-l |xargs --printf "$(pwd)/%n %U %G %A \n"
 echo $("newPerm") >newFile
 compare = cmp [outputFile newFile]
+choice = read -p "Please enter -s or -r \n -s will show file all the files that have been changed and the old and current permissions \n -r will reset the files back to the old permissions"
 if compare = 0 ; then
-echo You're file directory has not changed and is still : $(Perm);
+  if choice = -s ; then
+      echo "Youre file directory has not changed and is still : $(Perm) old: $(Perm) new: $(newPerm);"
+  elif choice = -r ; then
+      newPerm = Perm
+      echo "Youre file directory has not changed and is still : $(Perm) old: $(Perm) new: $(newPerm);"
+  fi
 elif compare =! 0 ; then
-echo you're files have changed and your old permission was : $(Perm);
+  
+  if choice = -s ; then 
+     cat newFile
+     echo "youre files have changed and your old permission was : $(Perm);"
+  elif choice = -r ; then
+     newPerm = Perm
+     echo "Youre files have changed but have now been returned to the old permission: newPerm" 
+  fi
 fi
--s flag is used
 #display old permissions from file -outputted from permissionsaver.sh
 #display current permissions
--r flag is used
 #read in old permissions
 #reset permissions to old permissions
 chmod'user''operater''permissions'
