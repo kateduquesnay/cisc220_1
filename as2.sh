@@ -15,7 +15,7 @@ addresses=$(ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print 
 
 while read line; do assign_locpriv $line; done <<< "$addresses";
 
-function assign_locpriv($ip)
+function assign_locpriv()
 {
 
 	if [[ $1==127* ]]; then
