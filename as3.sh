@@ -45,6 +45,8 @@ do
        echo ${car3pos/"~"/$car3pos + "~"}
  else 
   #clear screen
+  for n in $(seq 1 1 3)
+      echo ${car(n)pos/"~"/"|->"}
     
 #if (car1pos=40)
   #echo player 1 wins!
