@@ -4,8 +4,4 @@
 #Adele McCallum 10093867\
 #Dean Wilkins-Reeves 10176758\
 # git clone https://github.com/kateduquesnay/cisc220_1.git cisc220_1\
-
-
-#Question 1
-Get IP addresses:
-ifconfig | grep 'inet addr:' | awk '{print $2}' | awk -F":" '{print $2}'
+#Question 1\
