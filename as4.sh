@@ -5,13 +5,25 @@
 #Dean Wilkins-Reeves 10176758\
 # git clone https://github.com/kateduquesnay/cisc220_1.git cisc220_1\
 #Question 4\
-
+#!/bin/bash
 permissionSaver.sh
 #collect permissions for every file
+permissionSaver.sh
+#collect permissions for every file
+Perm= ls -l | xargs --printf "$(pwd)/%n %U %G %A \n"
 #save permissions in a text file
+echo $("Perm") >outputFile(n)
 
 permissionRestter.sh
 #check if any permissions have changed
+newPer= ls-l |xargs --printf "$(pwd)/%n %U %G %A \n"
+echo $("newPerm") >newFile
+compare = cmp [outputFile newFile]
+if compare = 0 ; then
+echo You're file directory has not changed and is still : $(Perm);
+elif compare =! 0 ; then
+echo you're files have changed and your old permission was : $(Perm);
+fi
 -s flag is used
 #display old permissions from file -outputted from permissionsaver.sh
 #display current permissions
