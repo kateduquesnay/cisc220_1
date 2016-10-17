@@ -25,15 +25,24 @@ do
     #Execute loop for valid operators
     while varOp == + || varOp == - || varOp == - || varOp == /
     do
+    varNum2 = read -p "Please insert number"
     if [varOp == +]
-      
+      then
+        $(varNum) = $(varNum)+$(varNum2)
+    elif [varOp == -]
+      then
+        $(varNum) = $(varNum)-$(varNum2)
+    elif [varOp == *]
+      then
+        $(varNum) = $(varNum)*$(varNum2)
+    else #Operator is /
+      $(varNum) = $(varNum)/$(varNum2)
       
   else
   echo Error! Please insert a number
   continue 
- 
- 
- 
+  
+  return varNum
  done
   
   
